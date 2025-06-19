@@ -1,0 +1,67 @@
+﻿@page "{filename?}"
+@model AgenciaTurismo.Pages.Exercicios.Exercicio08.ViewNotesModel
+@{
+    ViewData["Title"] = "Exercício 08 - Sistema de Notas";
+}
+
+<h2 class="text-center mt-4">Sistema de Notas</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mt-4" style="width: 400px;">
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="FileName" class="form-label">Título da Nota (sem ".txt")</label>
+                <input asp-for="FileName" class="form-control" />
+                <span asp-validation-for="FileName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Content" class="form-label">Conteúdo</label>
+                <textarea asp-for="Content" class="form-control" rows="6"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Salvar Nota</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.Mensagem))
+        {
+            <div class="alert alert-success mt-3 text-center">
+                <strong>@Model.Mensagem</strong>
+            </div>
+        }
+    </div>
+</div>
+
+@if (Model.Files.Any())
+{
+    <div class="d-flex justify-content-center mt-4">
+        <div class="card p-4" style="width: 400px;">
+            <h5>Notas Salvas</h5>
+            <ul class="list-group mb-3">
+                @foreach (var file in Model.Files)
+                {
+                    <li class="list-group-item">
+                        <a asp-page="ViewNotes" asp-route-filename="@file">@file</a>
+                    </li>
+                }
+            </ul>
+
+            @if (!string.IsNullOrEmpty(Model.SelectedContent))
+            {
+                <h6>Conteúdo de: <strong>@Model.SelectedFile</strong></h6>
+                <pre class="bg-light p-3 rounded border" style="white-space: pre-wrap;">@Model.SelectedContent</pre>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="d-flex justify-content-center mt-4">
+        <div class="card p-4" style="width: 400px;">
+            <p class="text-center text-muted">Nenhuma nota encontrada.</p>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

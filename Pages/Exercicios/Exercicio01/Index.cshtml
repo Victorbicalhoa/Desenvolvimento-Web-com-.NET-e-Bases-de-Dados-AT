@@ -1,0 +1,45 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio01.IndexModel
+@{
+    ViewData["Title"] = "Exercício 1 - Delegate de Desconto";
+}
+
+<h2 class="text-center mb-4">Delegate para Cálculo de Descontos</h2>
+
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label>Informe o valor da diária:</label>
+            <input asp-for="ValorOriginal" class="form-control" placeholder="Ex: 250,00" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 w-100">Calcular</button>
+    </form>
+
+    @if (Model.ValorComDesconto != null)
+    {
+        <div class="alert alert-success mt-4">
+            Valor com desconto: <strong>@Model.ValorComDesconto.Value.ToString("C")</strong>
+        </div>
+    }
+</div>
+
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .form-control {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 1rem;
+    }
+</style>

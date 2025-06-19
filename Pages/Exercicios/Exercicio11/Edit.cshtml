@@ -1,0 +1,37 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio11.EditModel
+@using AgenciaTurismo.Models
+
+@{
+    ViewData["Title"] = "Editar Pacote Turístico";
+}
+
+<h2 class="text-center mt-4">Editar Pacote Turístico</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mt-4" style="width: 400px;">
+        <form method="post">
+            <input type="hidden" asp-for="PacoteTuristico.Id" />
+
+            <div class="mb-3">
+                <label asp-for="PacoteTuristico.Titulo" class="form-label">Título</label>
+                <input asp-for="PacoteTuristico.Titulo" class="form-control" />
+                <span asp-validation-for="PacoteTuristico.Titulo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PacoteTuristico.Preco" class="form-label">Preço</label>
+                <input asp-for="PacoteTuristico.Preco" class="form-control" />
+                <span asp-validation-for="PacoteTuristico.Preco" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Salvar</button>
+        </form>
+
+        <a asp-page="Index" class="btn btn-secondary mt-3 w-100">Voltar</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

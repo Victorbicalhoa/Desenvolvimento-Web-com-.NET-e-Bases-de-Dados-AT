@@ -1,0 +1,62 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio02.IndexModel
+@{
+    ViewData["Title"] = "Exercício 2 - Multicast Delegate";
+}
+
+<h2 class="text-center mb-4">Multicast Delegate para Registro de Logs</h2>
+
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label>Informe uma mensagem para registrar log:</label>
+            <input asp-for="Mensagem" class="form-control" placeholder="Ex: Reserva criada com sucesso!" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 w-100">Registrar Log</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.LogConsole))
+    {
+        <div class="alert alert-secondary mt-4">
+            <strong>Console:</strong><br />
+            @Model.LogConsole
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.LogArquivo))
+    {
+        <div class="alert alert-dark mt-2">
+            <strong>Arquivo:</strong><br />
+            @Model.LogArquivo
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.LogMemoria))
+    {
+        <div class="alert alert-info mt-2">
+            <strong>Memória:</strong><br />
+            @Model.LogMemoria
+        </div>
+    }
+</div>
+
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .form-control {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 1rem;
+    }
+</style>

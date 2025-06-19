@@ -1,0 +1,30 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio03.IndexModel
+@{
+    ViewData["Title"] = "Exercício 3 - Func com Lambda";
+}
+
+<h2 class="text-center mt-4">Cálculo de Reserva com Lambda</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mt-4" style="width: 400px;">
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="NumeroDiarias" class="form-label">Número de Diárias</label>
+                <input asp-for="NumeroDiarias" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ValorDiaria" class="form-label">Valor da Diária (R$)</label>
+                <input asp-for="ValorDiaria" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Calcular Total</button>
+        </form>
+
+        @if (Model.ResultadoCalculado)
+        {
+            <div class="alert alert-success mt-3 text-center">
+                <strong>Valor Total:</strong> R$ @Model.ValorTotal.ToString("F2")
+            </div>
+        }
+    </div>
+</div>

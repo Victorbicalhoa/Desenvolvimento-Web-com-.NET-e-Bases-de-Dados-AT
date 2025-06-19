@@ -1,0 +1,24 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio12.DetailsModel
+@using AgenciaTurismo.Models
+
+@{
+    ViewData["Title"] = "Detalhes do Pacote";
+}
+
+<h2 class="text-center mt-4">Detalhes do Pacote Turístico</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mt-4" style="width: 400px;">
+        <dl class="row">
+            <dt class="col-sm-4">Título:</dt>
+            <dd class="col-sm-8">@Model.PacoteTuristico.Titulo</dd>
+
+            <dt class="col-sm-4">Preço:</dt>
+            <dd class="col-sm-8">@Model.PacoteTuristico.Preco.ToString("C")</dd>
+        </dl>
+
+        <a asp-page="Edit" asp-route-id="@Model.PacoteTuristico.Id" class="btn btn-primary w-100">Editar</a>
+        <a asp-page="Index" class="btn btn-secondary mt-2 w-100">Voltar</a>
+    </div>
+</div>

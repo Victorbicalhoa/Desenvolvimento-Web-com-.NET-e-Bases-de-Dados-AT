@@ -1,0 +1,30 @@
+﻿@page
+@model AgenciaTurismo.Pages.Exercicios.Exercicio04.IndexModel
+@{
+    ViewData["Title"] = "Exercício 04 - Evento de Capacidade";
+}
+
+<h2 class="text-center mt-4">Alerta de Capacidade</h2>
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mt-4" style="width: 400px;">
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="CapacidadeMaxima" class="form-label">Capacidade Máxima</label>
+                <input asp-for="CapacidadeMaxima" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ReservasAtuais" class="form-label">Total de Reservas</label>
+                <input asp-for="ReservasAtuais" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Verificar Capacidade</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.Mensagem))
+        {
+            <div class="alert @Model.AlertaCssClass mt-3 text-center">
+                <strong>@Model.Mensagem</strong>
+            </div>
+        }
+    </div>
+</div>
