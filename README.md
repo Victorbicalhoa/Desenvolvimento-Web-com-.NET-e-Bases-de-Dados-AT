@@ -1,9 +1,9 @@
-# 🧭 Agência de Turismo - Projeto ASP.NET Core com Razor Pages e EF Core
+# Agência de Turismo - Projeto ASP.NET Core com Razor Pages e EF Core
 
 Este projeto foi desenvolvido como parte da disciplina de **Desenvolvimento Web com .NET e Bases de Dados**.
 Trata-se de um sistema educacional para gerenciamento de uma agência de turismo, onde são praticados conceitos fundamentais de ASP.NET Core, Razor Pages, Entity Framework Core e autenticação.
 
-## 📚 Conteúdo por Exercício
+## Conteúdo por Exercício
 
 | Exercício | Tema | Descrição |
 |----------|------|-----------|
@@ -20,7 +20,7 @@ Trata-se de um sistema educacional para gerenciamento de uma agência de turismo
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - ASP.NET Core 8 (Razor Pages)
 - Entity Framework Core com SQLite
@@ -31,7 +31,7 @@ Trata-se de um sistema educacional para gerenciamento de uma agência de turismo
 
 ---
 
-## ⚙️ Executando o Projeto
+## Executando o Projeto
 
 1. **Clone o repositório:**
 
@@ -57,12 +57,12 @@ dotnet run
 Acesse via navegador:
 http://localhost:7000
 
-🔐 Login de Acesso
+## Login de Acesso
 A aplicação exige login para acesso a páginas sensíveis (Exercício 12).
 Usuário: admin
 Senha: 1234
 
-🧪 Funcionalidades
+## Funcionalidades
 ✅ CRUD completo de Pacotes Turísticos
 ✅ Relacionamentos com Cidades e Países
 ✅ Validação com DataAnnotations
@@ -71,7 +71,7 @@ Senha: 1234
 ✅ Interface amigável com Bootstrap
 ✅ Roteamento dinâmico com parâmetros
 
-📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 AgenciaTurismo/
 ├── Models/
@@ -93,10 +93,10 @@ AgenciaTurismo/
 ├── Program.cs
 └── AgenciaTurismo.csproj
 
-👨‍💻 Autor
+## Autor
 Hebert Victor Bicalho de Almeida
 Aluno de Engenharia de Software | 2º Período
 Desenvolvimento focado em ASP.NET, Java, Python e Segurança Cibernética.
 
-📝 Licença
+## Licença
 Este projeto é acadêmico e sem fins lucrativos. Todos os direitos reservados ao autor.
